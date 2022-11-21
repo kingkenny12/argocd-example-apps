@@ -14,29 +14,8 @@ spec:
         app: guestbook-ui
     spec:
       containers:
-      - image: nginx:1.14.2 #gcr.io/heptio-images/ks-guestbook-demo:0.2
+      #- image: nginx:1.14.2 #gcr.io/heptio-images/ks-guestbook-demo:0.2
+      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
         name: guestbook-u
         ports:
         - containerPort: 80
-
-
-
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   name: nginx-deployment
-# spec:
-#   selector:
-#     matchLabels:
-#       app: nginx
-#   replicas: 2 # tells deployment to run 2 pods matching the template
-#   template:
-#     metadata:
-#       labels:
-#         app: nginx
-#     spec:
-#       containers:
-#       - name: nginx
-#         image: nginx:1.14.2
-#         ports:
-#         - containerPort: 80
